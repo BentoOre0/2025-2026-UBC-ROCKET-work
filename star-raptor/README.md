@@ -8,16 +8,22 @@
 
 ## What it is
 
-Star Raptor is **my certification rocket** — a vehicle I designed and built on my own to
+Star Raptor is **my certification rocket**, a vehicle I designed and built on my own to
 earn my Canadian Association of Rocketry certification. It is deliberately much simpler
 than [the Big Mach](../big-mach/): no avionics, no separation charges, no composites.
 
 It was also a **five-day build**, constrained by when the certification window fell.
 
-That combination — solo, simple, fast — is the whole point of the project, and it is a
+That combination (solo, simple, fast) is the whole point of the project, and it is a
 different kind of engineering problem from the Big Mach. On a team vehicle you can
 specialise. Here every decision was mine and every decision had to be one I could
 actually execute alone, at home, inside a week.
+
+![Star Raptor carried on the shoulder for scale](media/shoulder-carry-scale.jpg)
+
+*Star Raptor off the stand. Roughly a metre of airframe: printed nose cone, cardboard
+body tube, printed five-fin can, with the kevlar shock cord and its anchor visible at
+the shoulder.*
 
 ---
 
@@ -30,7 +36,7 @@ That single constraint decides most of the vehicle:
 
 | Decision | Why |
 |---|---|
-| **Motor-ejection recovery, no flight computer** | The propellant grain has an ejection charge built in. If I let the motor deploy the parachute, I need no altimeter, no battery, no e-matches, no charge wells — and nothing to debug in five days. |
+| **Motor-ejection recovery, no flight computer** | The propellant grain has an ejection charge built in. If I let the motor deploy the parachute, I need no altimeter, no battery, no e-matches, no charge wells, and nothing to debug in five days. |
 | **3D-printed nose cone and fin can** | The two geometrically fussy parts. Printing them meant I could iterate the fin design without tooling, and a printed fin can guarantees fin alignment far better than I could hand-align individual fins on a tube. |
 | **Cardboard body tube** | Adequate for the altitude and velocity involved, and available immediately. Composite work would have cost days I didn't have. |
 | **U-bolts, kevlar shock cord, off-the-shelf parachute** | Home Depot and hobby-shop parts. Recovery hardware is the one place not to improvise, and buying it removed a whole category of risk. |
@@ -49,7 +55,7 @@ a five-day build possible.
 <td width="50%"><img src="media/nosecone-ubolt-kevlar.jpg" alt="Nose cone with U-bolt and kevlar shock cord"></td>
 </tr>
 <tr>
-<td colspan="2"><em>Left: the printed fin can, viewed from the aft end down the motor tube. Printing the fin can as a single part fixes the fin alignment in the model instead of during assembly. Right: the nose cone's recovery attachment — a through-bolt anchoring the kevlar shock cord. This joint takes the full deployment shock, so it is bolted through the structure rather than glued.</em></td>
+<td colspan="2"><em>Left: the printed fin can, viewed from the aft end down the motor tube. Printing the fin can as a single part fixes the fin alignment in the model instead of during assembly. Right: the nose cone's recovery attachment, a through-bolt anchoring the kevlar shock cord. This joint takes the full deployment shock, so it is bolted through the structure rather than glued.</em></td>
 </tr>
 </table>
 
@@ -93,5 +99,5 @@ flight. No sub-teams, no inherited hardware.
   from a build step I could get wrong into a model constraint I could not.
 - **This was the transition project.** Before this, most of my work was software and
   algorithmic. Star Raptor was the first thing I designed, manufactured and flew end to
-  end myself, and it is the reason the hardware work that followed — the Big Mach, and
-  [the quadruped](https://github.com/BentoOre0/Modded-Nova-SM3) — was possible.
+  end myself, and it is the reason the hardware work that followed (the Big Mach, and
+  [the quadruped](https://github.com/BentoOre0/Modded-Nova-SM3)) was possible.

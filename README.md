@@ -9,7 +9,7 @@ Two projects live here. One I built with a sub-team, one I built alone in five d
 
 <table>
 <tr>
-<td width="50%"><a href="big-mach/"><img src="big-mach/media/build/finished-airframe-painted.jpg" alt="The Big Mach, finished and painted"></a></td>
+<td width="50%"><a href="big-mach/"><img src="big-mach/media/launch/launch-site-vehicle-field.jpg" alt="The Big Mach at the launch site"></a></td>
 <td width="50%"><a href="star-raptor/"><img src="star-raptor/media/shoulder-carry-scale.jpg" alt="Star Raptor, shoulder carried for scale"></a></td>
 </tr>
 <tr>
@@ -62,9 +62,9 @@ The separation charge ground test. Recovery depends on a black powder charge spl
 the airframe at the right moment, and the charge mass is not something you calculate
 once and trust. You mass it out, fire it, and watch.
 
-![Separation charge ground test](big-mach/media/testing/separation-charge-test.gif)
+![Separation charge ground test, slow motion](big-mach/media/testing/separation-test-slowmo.gif)
 
-*Ground test of the recovery separation charge, fired remotely. Full detail in the
+*Recovery separation charge, fired remotely, filmed at 120fps and slowed down. Full detail in the
 [Big Mach testing section](big-mach/README.md#separation-charge-testing).*
 
 ---

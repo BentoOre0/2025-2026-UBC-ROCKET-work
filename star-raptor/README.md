@@ -74,30 +74,31 @@ flight. No sub-teams, no inherited hardware.
 
 ---
 
-## Evidence index
-
-| Claim | Evidence in this repo | Status |
-|---|---|---|
-| Solo design and build | My own project notes; no team present in any photo | **Verified** |
-| 3D-printed nose cone and fin can | `media/printed-fin-can-5fin.jpg`, `media/assembled-upright.jpg` | **Verified** |
-| Five-fin configuration | Aft view of the fin can | **Verified** |
-| Kevlar shock cord + bolted recovery anchor | `media/nosecone-ubolt-kevlar.jpg` | **Verified** |
-| Parachute packed in the airframe | `media/recovery-packed-in-tube.jpg` | **Verified** |
-| No onboard electronics | No electronics in any photo; motor-ejection architecture | **Verified** |
-| Built for CAR certification | My own project notes | **From my notes** |
-| Five-day build | My own project notes | **From my notes, not evidenced here** |
-| Hardware-store U-bolts | Visible fastener, source not evidenced | **Partly evidenced** |
-
----
-
 ## What I took away from it
 
-- **Choosing the architecture that removes failure modes beats engineering around them.**
-  Motor ejection is less impressive than a dual-deploy altimeter setup, and it was
-  unambiguously the right call for a five-day solo build.
-- **Print the parts where alignment matters.** A one-piece fin can moves fin alignment
-  from a build step I could get wrong into a model constraint I could not.
-- **This was the transition project.** Before this, most of my work was software and
-  algorithmic. Star Raptor was the first thing I designed, manufactured and flew end to
-  end myself, and it is the reason the hardware work that followed (the Big Mach, and
-  [the quadruped](https://github.com/BentoOre0/Modded-Nova-SM3)) was possible.
+**Choosing an architecture that removes failure modes beats engineering around them.**
+Motor ejection is less impressive than a dual-deploy altimeter setup, and it was
+unambiguously the right call. Every electronic component I did not put in the rocket was a
+component I did not have to source, wire, mount, power, test, or debug at midnight on day
+four. The propellant grain already carried an ejection charge. Using it meant the recovery
+system had no failure mode I would have needed a test campaign to characterise, and a test
+campaign was exactly what I did not have time for.
+
+**Print the parts where alignment matters.** A one-piece fin can moves fin alignment out
+of assembly, where I could get it wrong with glue and a squint, and into the model, where
+it is a constraint I cannot violate. The same logic picked the nose cone. Those were the
+two geometrically fussy parts, and printing them meant I could iterate the shape without
+tooling and without a jig.
+
+**Scope is the engineering.** There is nothing sophisticated in this vehicle. The
+sophistication was in deciding what not to build. Given five days, solo, at home, the
+design question was not "what is the best rocket I can draw" but "what is the best rocket
+I can finish", and those have very different answers. Working out which corners were safe
+to cut, and which one (recovery hardware) to spend real money on rather than improvise,
+was the part that actually required judgement.
+
+**This was the transition project.** Before this, most of my work was software and
+algorithmic. Star Raptor was the first thing I designed, manufactured and flew end to end
+myself. Getting a physical object through that whole loop, including the parts that are
+just tedious, is what made the hardware work that followed possible: the Big Mach, and
+[the quadruped](https://github.com/BentoOre0/Modded-Nova-SM3).

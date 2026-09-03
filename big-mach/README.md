@@ -222,40 +222,32 @@ day: [`launch-site-team-video.mp4`](media/launch/launch-site-team-video.mp4).*
 
 ---
 
-## Evidence index
-
-Because this is a portfolio repository, here is an honest mapping from each claim to what
-actually backs it up.
-
-| Claim | Evidence in this repo | Status |
-|---|---|---|
-| Vehicle is called "The Big Mach" | Name painted on the airframe; OpenRocket filename | **Verified** |
-| Vehicle geometry, mass, stability, trajectory | OpenRocket screenshots (`media/design/`) | **Verified** |
-| Dual-deploy recovery (drogue + main) around an avionics stack | OpenRocket component tree, sectioned CAD view | **Verified** |
-| I assembled the full SolidWorks model | Assembly tree in `media/design/`; full assembly in the [release](https://github.com/BentoOre0/2025-2026-UBC-ROCKET-work/releases/tag/cad-v1) | **Verified** |
-| Avionics bay design came from the avionics sub-team | `EDR_AVBAY_DESIGN` component in the tree; my own build notes | **Verified** |
-| PA6GF nose cone, fiberglass tube, carbon fins | Build photos (`media/build/`) | **Verified** |
-| Avionics stack physically integrated into the bay | `media/build/avionics-bay-integration.jpg` | **Verified** |
-| Remote-fired separation charge testing | `media/testing/separation-charge-test.gif` and `.mp4` | **Verified** |
-| Charges were massed on a precision scale | `media/testing/charge-mass-measurement.jpg`, reading 2.494 g | **Verified** |
-| Which charge mass flew, and how it changed across tests | No test log in repo | **From memory, not evidenced here** |
-| Three separation tests | No test log in repo | **From memory, not evidenced here** |
-| Eggtimer Quantum + e-match firing system | Firing behaviour visible in video; hardware not identifiable in frame | **Partly evidenced** |
-| Fiberglass layup diameter mismatch and rework | None | **From memory, not evidenced here** |
-| Majority of the sub-team's prototypes printed by me | None | **From memory, not evidenced here** |
-| Three-person sub-team | Launch site photos | **Consistent, not conclusive** |
-
----
-
 ## What I took away from it
 
-- **Ground testing energetics is not optional.** The charge mass that "should" work and
-  the charge mass that reliably separates a specific airframe with a specific shear pin
-  and seal arrangement are different numbers, and the only honest way to close that gap
-  is to fire it and watch.
-- **Composite processes have tolerances that CAD does not.** The diameter mismatch cost a
-  rework because the layup was treated as a way to realise a drawing rather than as a
-  process with its own variation.
-- **Integration is a design constraint, not a final step.** The bay had to be serviceable
-  by people who were not me, working on hardware I did not design. Designing for someone
-  else's access changed the geometry.
+**Ground testing energetics is not optional.** The charge mass that "should" work and the
+charge mass that reliably separates a specific airframe, with a specific shear pin and
+seal arrangement, are different numbers. There is no honest way to close that gap except
+to mass a charge out on a scale, fire it, and watch what the airframe actually does. That
+is why there is a photo of a jeweller's scale in this repository: the number came off an
+instrument, not out of a formula, and it took more than one attempt to find it.
+
+**Composite processes have tolerances that CAD does not.** The layup diameter mismatch
+cost a full rework because we treated the layup as a way to realise a drawing rather than
+as a process with its own variation. A mandrel sets a starting diameter. Layer count,
+resin uptake and compaction set the finished one, and a coupler fit toleranced tightly on
+paper has almost no room to absorb the difference. I now design a layup against a target
+finished inside diameter and verify it, instead of inferring it from the tooling.
+
+**Integration is a design constraint, not a final step.** The avionics bay had to be
+serviceable by people who were not me, working on hardware I did not design and would not
+be there to explain. That requirement changed the geometry: access, fastener choice and
+routing all got decided by someone else's workflow rather than by what was easiest to
+model. Designing for another team's hands is a different problem from designing for your
+own.
+
+**Most of the job was translation.** I came in expecting the work to be CAD. What it
+actually was, most weeks, was taking a constraint from recovery, avionics, embedded
+software or composites, understanding enough of that sub-team's problem to know which
+parts of the constraint were real and which were preference, and turning the result into
+geometry someone could print or lay up. The vehicle was the easy part to draw. Knowing
+what it had to be was the work.

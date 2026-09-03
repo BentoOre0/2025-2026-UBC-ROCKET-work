@@ -51,9 +51,8 @@ Concretely, across the two projects:
 | **Energetics and testing** | Sizing and massing black powder separation charges, wiring e-matches, and firing them over a remote link. |
 
 The avionics bay component (`EDR_AVBAY_DESIGN`) came from the avionics sub-team. The
-rest of the assembly and all the mating is mine. Where the evidence in this repository
-supports a claim I have linked it, and where it does not I have said so rather than
-dressing it up. Each project README carries an evidence table.
+rest of the assembly and all the mating is mine. Where a claim rests on memory rather than
+on something in this repository, I have said so in place rather than dressing it up.
 
 ---
 

@@ -169,20 +169,19 @@ reaches it.
 I used the flutter criterion from **NACA TN 4197 (Equation 18)**, the standard closed-form
 prediction for low aspect ratio solid fins tapered toward the tip:
 
-```
-                      G
-U_F = a * sqrt( ---------------------------------------- )
-                 39.3 AR^3      ( λ + 1 )   ( P  )
-                -----------  *  ( ----- ) * ( -- )
-                (t/c_r)^3 (AR+2)(   2   )   ( P0 )
-```
+![Flutter velocity equation, NACA TN 4197 Equation 18](media/analysis/flutter-equation.png)
 
-where `a` is the speed of sound at altitude, `G` the shear modulus of the fin, `AR` the
-aspect ratio, `λ` the tip-to-root chord ratio, `t/c_r` the thickness ratio, and `P/P0` the
+`a` is the speed of sound at altitude, `G` the shear modulus of the fin, `AR` the aspect
+ratio, `λ` the tip-to-root chord ratio, `t/c_r` the thickness ratio, and `P/P0` the
 pressure ratio against sea level. Because `a` and `P` both fall with altitude, flutter
 speed is not a single number: it has to be evaluated along the whole trajectory. I pulled
 altitude, local speed of sound and vehicle Mach number from the OpenRocket simulation and
 evaluated the criterion at each point.
+
+![Trapezoidal fin set configuration in OpenRocket](media/analysis/fin-geometry-openrocket.png)
+
+*The fin set as defined in OpenRocket, and the parameters the flutter criterion consumes.
+These are the numbers that go into the equation above.*
 
 Fin geometry, taken from the CAD model and the OpenRocket trapezoidal fin set:
 
@@ -199,8 +198,23 @@ Fin geometry, taken from the CAD model and the OpenRocket trapezoidal fin set:
 | Fin set mass | 329 g |
 
 **Result: flutter velocity runs about Mach 2.5 at sea level to Mach 2.9 at 2500 m, while
-the vehicle peaks just under Mach 1.0 at roughly 500 m.** The two curves never approach
-each other, so the fin design has a wide margin and was cleared on that basis.
+the vehicle peaks just under Mach 1.0 at roughly 500 m.**
+
+<table>
+<tr>
+<td width="50%"><img src="media/analysis/flutter-velocity-vs-altitude.png" alt="Flutter velocity against altitude"></td>
+<td width="50%"><img src="media/analysis/flutter-vs-vehicle-velocity.png" alt="Flutter velocity against vehicle velocity"></td>
+</tr>
+<tr>
+<td><em>Flutter velocity rising with altitude, Mach 2.5 to 2.9.</em></td>
+<td><em>The one that matters: flutter velocity (blue) against actual vehicle velocity (red) over the whole flight. The gap between the curves is the margin.</em></td>
+</tr>
+</table>
+
+The right-hand plot is the whole point of the exercise. The red curve is the vehicle,
+peaking just under Mach 1.0 early in the burn and bleeding off; the blue curve is the
+speed at which the fins would start to flutter. They never come close to touching, so the
+fin design was cleared on that basis.
 
 > **Where this analysis is weak.** The shear modulus is the input the whole result hinges
 > on, and I did not have a measured value for our actual fin material. I used a value
@@ -334,9 +348,10 @@ hours from the Hennings Building on campus, across the border.
 
 ![At the launch site with the sub-team](media/launch/launch-site-team.jpg)
 
-*At the launch site with the sub-team and team lead. It was extremely windy, which is the
-kind of thing that decides whether a launch window happens at all. Video from the same
-day: [`launch-site-team-video.mp4`](media/launch/launch-site-team-video.mp4).*
+*At the launch site with the sub-team. It was extremely windy, which is the kind of thing
+that decides whether a launch window happens at all. Our team lead is not in any of the
+photos, only in the video from the same day:
+[`launch-site-team-video.mp4`](media/launch/launch-site-team-video.mp4).*
 
 ---
 

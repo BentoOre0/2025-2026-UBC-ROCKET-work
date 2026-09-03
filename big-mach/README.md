@@ -123,6 +123,17 @@ behind the cone; the recovery hardware packs either side of the electronics.*
 </tr>
 </table>
 
+<table>
+<tr>
+<td width="33%"><img src="media/build/workshop-assembly-with-team.jpg" alt="Assembling the airframe in the workshop"></td>
+<td width="33%"><img src="media/build/workshop-vehicle-upright.jpg" alt="Vehicle standing in the workshop"></td>
+<td width="33%"><img src="media/build/workshop-finished-vehicle.jpg" alt="Finished vehicle in the workshop"></td>
+</tr>
+<tr>
+<td colspan="3"><em>Build progress in the UBC Rocket workshop. Left: airframe going together, with the bare composite section still unpainted. Middle and right: the vehicle standing complete, alongside the team's other airframes and nose cones.</em></td>
+</tr>
+</table>
+
 ![Aft end of the airframe, looking down the body tube](media/build/aft-centering-ring-detail.jpg)
 
 *Looking down the airframe at the motor tube, held concentric inside the body tube by a
@@ -148,6 +159,60 @@ verified, rather than assumed from the mandrel.
 
 ---
 
+## Fin flutter analysis
+
+A fin that flutters shakes itself apart. The fins had to survive a vehicle that the
+simulation puts just over Mach 1, so before committing to the fin design I needed to know
+the speed at which bending-torsion flutter would start, and confirm the vehicle never
+reaches it.
+
+I used the flutter criterion from **NACA TN 4197 (Equation 18)**, the standard closed-form
+prediction for low aspect ratio solid fins tapered toward the tip:
+
+```
+                      G
+U_F = a * sqrt( ---------------------------------------- )
+                 39.3 AR^3      ( λ + 1 )   ( P  )
+                -----------  *  ( ----- ) * ( -- )
+                (t/c_r)^3 (AR+2)(   2   )   ( P0 )
+```
+
+where `a` is the speed of sound at altitude, `G` the shear modulus of the fin, `AR` the
+aspect ratio, `λ` the tip-to-root chord ratio, `t/c_r` the thickness ratio, and `P/P0` the
+pressure ratio against sea level. Because `a` and `P` both fall with altitude, flutter
+speed is not a single number: it has to be evaluated along the whole trajectory. I pulled
+altitude, local speed of sound and vehicle Mach number from the OpenRocket simulation and
+evaluated the criterion at each point.
+
+Fin geometry, taken from the CAD model and the OpenRocket trapezoidal fin set:
+
+| Parameter | Value |
+|---|---|
+| Number of fins | 3 |
+| Root chord | 8 in |
+| Tip chord | 2 in |
+| Semi-span (height) | 4.32 in |
+| Sweep length / angle | 5 in / 49.2 deg |
+| Thickness | 0.25 in, rounded cross section |
+| Fin cant | 0 deg |
+| Material | PLA, 100% infill (1.25 g/cm^3) |
+| Fin set mass | 329 g |
+
+**Result: flutter velocity runs about Mach 2.5 at sea level to Mach 2.9 at 2500 m, while
+the vehicle peaks just under Mach 1.0 at roughly 500 m.** The two curves never approach
+each other, so the fin design has a wide margin and was cleared on that basis.
+
+> **Where this analysis is weak.** The shear modulus is the input the whole result hinges
+> on, and I did not have a measured value for our actual fin material. I used a value
+> assumed from fins I believed had similar properties, which I flagged in the team
+> documentation at the time as the soft spot in the calculation. The honest way to close
+> it is a deflection test on a real fin: apply a known force at the tip, measure the
+> deflection, back out `G`. The margin here is large enough (roughly 2.5x) that a
+> substantial error in `G` would not change the conclusion, which is the only reason the
+> assumption was acceptable.
+
+---
+
 ## Avionics integration
 
 ![Avionics bay stack](media/build/avionics-bay-integration.jpg)
@@ -158,6 +223,14 @@ battery strapped below. My work here was the physical integration: getting this 
 its battery and its charge wiring to fit, mount and route inside the bay, and remain
 serviceable by the avionics sub-team.*
 
+![LiPo battery wired to the Eggtimer board](media/avionics/lipo-eggtimer-wiring.jpg)
+
+*Power and firing hardware on the bench before it went into the bay: a 2S LiPo (3250 mAh,
+7.4 V, 24 Wh) on an XT60 lead, wired through to the Eggtimer board with its WiFi module
+visible. The Eggtimer needs 2S/7.4 V, so the pack choice is set by the board. This is the
+link between the battery and the e-match that fires the separation charge, and it is the
+part of the electronics I was responsible for physically integrating.*
+
 ---
 
 ## Separation charge testing
@@ -167,12 +240,19 @@ right moment. Too little and the sections do not part; too much and you damage t
 airframe or the parachute you are trying to deploy. The charge mass is not something you
 can confidently calculate and walk away from. It gets massed out, fired, and watched.
 
+![Separation test in slow motion](media/testing/separation-test-slowmo.gif)
+
+*A later test on the finished, painted vehicle, filmed at 120fps and slowed roughly 3x.
+The charge fires, the airframe splits at the coupler, and the two sections push apart
+with the shock cord paying out between them. Slowing it down is what makes it useful:
+you can see whether the sections separate cleanly and stay tethered, rather than just
+hearing a bang.*
+
 ![Separation charge ground test](media/testing/separation-charge-test.gif)
 
-*Ground test, trimmed to the event. The airframe sits horizontally on the pavement, the
-charge fires, and the sections separate in a puff of smoke. Fired remotely, triggered
-from a phone over a wireless link to the firing board and out to the e-match. Full
-resolution clip: [`separation-charge-test.mp4`](media/testing/separation-charge-test.mp4).*
+*An earlier test on the bare airframe, real time. Fired remotely, triggered from a phone
+over a wireless link to the firing board and out to the e-match. Full resolution clip:
+[`separation-charge-test.mp4`](media/testing/separation-charge-test.mp4).*
 
 ![Charge mass on a precision scale](media/testing/charge-mass-measurement.jpg)
 
@@ -213,6 +293,10 @@ hours from the Hennings Building on campus, across the border.
 <td><em>With the Big Mach at the launch site.</em></td>
 </tr>
 </table>
+
+![The Big Mach at the launch site](media/launch/launch-site-vehicle-field.jpg)
+
+*The finished vehicle at the launch site.*
 
 ![At the launch site with the sub-team](media/launch/launch-site-team.jpg)
 

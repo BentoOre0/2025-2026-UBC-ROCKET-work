@@ -62,10 +62,21 @@ The separation charge ground test. Recovery depends on a black powder charge spl
 the airframe at the right moment, and the charge mass is not something you calculate
 once and trust. You mass it out, fire it, and watch.
 
-![Separation charge ground test, slow motion](big-mach/media/testing/separation-test-slowmo.gif)
+<table>
+<tr>
+<td width="50%"><img src="big-mach/media/testing/separation-test-slowmo.gif" alt="Separation test, slow motion"></td>
+<td width="50%"><img src="big-mach/media/testing/separation-charge-test.gif" alt="Separation charge ground test"></td>
+</tr>
+<tr>
+<td><em>Painted vehicle, filmed at 120fps and slowed roughly 3x. The sections part and stay tethered by the shock cord.</em></td>
+<td><em>An earlier test on the bare airframe, real time.</em></td>
+</tr>
+</table>
 
-*Recovery separation charge, fired remotely, filmed at 120fps and slowed down. Full detail in the
-[Big Mach testing section](big-mach/README.md#separation-charge-testing).*
+The charge mass was found by **binary search**: bracket at 1 g and 2 g, halve the interval,
+converge in three to four tests, then repeat at the winning charge to prove it was not
+luck. Full detail in the
+[Big Mach testing section](big-mach/README.md#separation-charge-testing).
 
 ---
 

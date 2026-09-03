@@ -26,6 +26,8 @@ My own certification rocket, designed and built solo to earn a Canadian Associat
 <b>My role:</b> everything. Design, CAD, printing, assembly, recovery packing, flight.
 <br><br>
 <b>Scale:</b> roughly 1 m, printed nose cone and five-fin can, motor-ejection recovery, no onboard electronics.
+<br><br>
+<b>CAD:</b> full SolidWorks assembly, section views, and the sliced print files, all in the repo.
 </td>
 </tr>
 </table>
@@ -44,7 +46,7 @@ Concretely, across the two projects:
 
 | Area | What that meant here |
 |---|---|
-| **CAD** | Owned and assembled the full `FullAssembly` SolidWorks model of the Big Mach: nose cone sections, body tubes, couplers, bulkheads, centering rings, fin pattern. Modelled Star Raptor's printed parts from scratch. |
+| **CAD** | Owned and assembled the full `FullAssembly` SolidWorks model of the Big Mach: nose cone sections, body tubes, couplers, bulkheads, centering rings, fin pattern. Modelled Star Raptor from scratch as a six-part SolidWorks assembly, then exported and sliced it myself. |
 | **Simulation** | OpenRocket models for stability and trajectory, used to size the airframe and check margin before committing to a layup. |
 | **Manufacturing** | 3D printing (including a PA6GF glass-filled-nylon nose cone), fiberglass wet layups, composite fin work, paint and finishing. |
 | **Avionics integration** | Physically fitting the flight computer stack, battery and charge wiring into the bay, and keeping it serviceable by the sub-team that owned it. |
@@ -89,6 +91,7 @@ luck. Full detail in the
 | **[Design media](big-mach/media/design/)** | OpenRocket and SolidWorks screenshots |
 | **[Build media](big-mach/media/build/)** | Composite layup, printed parts, avionics bay, finished airframe |
 | **[Testing media](big-mach/media/testing/)** | Separation charge ground test, charge mass measurement |
+| **[Star Raptor CAD source](star-raptor/cad/)** | SolidWorks parts and assemblies, STEP exports, sliced print files |
 | **[Full CAD assembly](https://github.com/BentoOre0/2025-2026-UBC-ROCKET-work/releases/tag/cad-v1)** | The complete SolidWorks assembly, 169 MB, hosted as a release asset |
 
 ```text
@@ -101,7 +104,11 @@ big-mach/
     launch/     launch site photos and video
 star-raptor/
   README.md
-  media/        printed fin can, recovery packing, assembled vehicle
+  cad/          SolidWorks parts + assemblies, STEP exports, sliced print files
+  media/
+    cad/        SolidWorks renders and section views
+    print/      build plate layouts
+    ...         printed fin can, recovery packing, assembled vehicle
 ```
 
 ## The full CAD assembly

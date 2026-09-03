@@ -47,7 +47,95 @@ a five-day build possible.
 
 ---
 
+## Design
+
+I modelled the whole vehicle in SolidWorks as an assembly (`MyRocketAssem`) before
+printing anything. For a five-day build that is not ceremony, it is the only way to find
+out that two parts do not fit while the fix still costs a re-export instead of a reprint.
+
+<table>
+<tr>
+<td width="55%"><img src="media/cad/cad-assembly-shaded.jpg" alt="Star Raptor full assembly in SolidWorks"></td>
+<td width="45%"><img src="media/cad/cad-exploded-components.jpg" alt="Exploded view of the printed components"></td>
+</tr>
+<tr>
+<td><em>The full assembly. Nose cone, body tube, and the printed fin can.</em></td>
+<td><em>The same assembly exploded, which is the view that matters for a printed rocket:
+nose cone at the top, the ring that anchors the U-bolt below it, and the fin can at the
+bottom. These are the parts that have to mate on the first try.</em></td>
+</tr>
+</table>
+
+The assembly is six parts:
+
+| Part | File |
+|---|---|
+| Nose cone | `nosecone.SLDPRT` |
+| Body tube | `LowerBodyTube.SLDPRT` |
+| Fin can, five fins in one piece | `FinCan.SLDPRT` |
+| End cap | `endcap.SLDPRT` |
+| U-bolt attachment, body tube end | `uboltattatchmentpart.SLDPRT` |
+| U-bolt attachment, nose cone end | `Uboltattatchmentpartnosecone.SLDPRT` |
+
+### Section views
+
+The section views are what I actually used while designing. On a printed rocket the
+walls, the internal tube and the clearances between them are the design, and they are
+invisible in a shaded exterior view.
+
+<table>
+<tr>
+<td width="50%"><img src="media/cad/cad-fin-can-section.jpg" alt="Section view through the fin can"></td>
+<td width="50%"><img src="media/cad/cad-fin-can-wireframe.jpg" alt="Wireframe view of the fin can showing the inner tube"></td>
+</tr>
+<tr>
+<td colspan="2"><em>Left: a section cut through the aft end, showing the wall thicknesses
+and the stepped joint where the fin can meets the body tube. Right: the same region in
+wireframe, showing the inner tube running up inside the fin can and the rings that locate
+it. Cutting the section is how you catch a wall that is too thin to print or a clearance
+that closes up once the tolerances stack.</em></td>
+</tr>
+</table>
+
+<img src="media/cad/cad-section-view.jpg" width="70%" alt="Section view of the complete vehicle">
+
+*The full vehicle in section, showing how much of the airframe is open volume for the
+recovery system.*
+
+**The full CAD source is in [`cad/`](cad/)**: SolidWorks parts and assemblies, the STEP
+exports, and the slicer project files. `MyRocketAssemFinal.SLDASM` is the assembly the
+built vehicle came from.
+
+---
+
 ## Build
+
+### From CAD to printed part
+
+Every printed part went the same route: model it in SolidWorks, export STEP, arrange it
+on a build plate, slice, print. The sliced project files are in
+[`cad/toprint/`](cad/toprint/) and [`cad/final print top parts/`](cad/final%20print%20top%20parts/),
+so the print setup is recoverable rather than just described.
+
+<table>
+<tr>
+<td width="50%"><img src="media/print/print-plate-fin-can-endcap.png" alt="Build plate with the fin can and end cap"></td>
+<td width="50%"><img src="media/print/print-plate-nose-parts.png" alt="Build plate with the nose cone and U-bolt attachment parts"></td>
+</tr>
+<tr>
+<td><em>Fin can and end cap on one plate. The fin can prints standing on its aft face, so
+the fins are supported by the plate rather than cantilevered in mid-air.</em></td>
+<td><em>The upper parts on another plate: nose cone, the body tube U-bolt attachment, and
+the nose cone U-bolt attachment.</em></td>
+</tr>
+</table>
+
+Everything was printed with a **0.6 mm nozzle at 0.30 mm layer height**. That is a coarse
+setting, and it was deliberate: a bigger nozzle and thicker layers cut print time hard,
+and on structural parts the thicker extrusion is stronger across layer lines than a fine
+one. Surface finish was the thing I could afford to give up. Print time was not.
+
+### The physical parts
 
 <table>
 <tr>
@@ -89,6 +177,13 @@ of assembly, where I could get it wrong with glue and a squint, and into the mod
 it is a constraint I cannot violate. The same logic picked the nose cone. Those were the
 two geometrically fussy parts, and printing them meant I could iterate the shape without
 tooling and without a jig.
+
+**Model the whole thing before printing any of it.** The parts that had to mate (fin can
+to body tube, nose cone to its U-bolt ring) were the parts most likely to waste a print,
+and a full assembly with section views is where you find a wall that is too thin or a
+clearance that has closed up. A reprint of the fin can costs hours I did not have. A
+re-export costs minutes. Building the assembly first was what kept the five days
+realistic.
 
 **Scope is the engineering.** There is nothing sophisticated in this vehicle. The
 sophistication was in deciding what not to build. Given five days, solo, at home, the

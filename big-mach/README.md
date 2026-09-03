@@ -211,11 +211,16 @@ each other, so the fin design has a wide margin and was cleared on that basis.
 > substantial error in `G` would not change the conclusion, which is the only reason the
 > assumption was acceptable.
 
-The flutter working, the fin dimensions and the resulting plots are in the team
-documentation I helped write:
+The flutter working, the fin dimensions and the resulting plots are in
 [`fin-flutter-and-separation-testing-extract.pdf`](docs/fin-flutter-and-separation-testing-extract.pdf).
-That file is an extract. The packing-procedure pages are another sub-team's work and are
-left out, along with the operational pages that carry hardware credentials.
+
+That document is a **collaborative team document** that I contributed to, not something I
+wrote alone, and it is published here as an extract. The fin flutter analysis is the part
+I can point to as my own work. Elsewhere in it I contributed without being able to draw a
+clean line around which paragraphs are mine, so I am not going to claim the document
+wholesale. The pages covering the black powder packing procedure are explicitly credited
+to another sub-team and are left out entirely, along with the operational pages carrying
+hardware credentials.
 
 ---
 
@@ -273,7 +278,7 @@ charge requirement, and debugged power and electronics faults that came up durin
 
 ### Finding the charge mass by bisection
 
-The charge mass was not guessed at and it was not swept linearly. The procedure documented
+The charge mass was not guessed at and it was not swept linearly. The procedure written up
 for the team, and the one I ran, is a **binary search on charge mass**:
 
 1. Fire one test at **1 g** and one at **2 g** to bracket the answer immediately.

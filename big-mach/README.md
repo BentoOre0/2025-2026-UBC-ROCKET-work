@@ -211,6 +211,12 @@ each other, so the fin design has a wide margin and was cleared on that basis.
 > substantial error in `G` would not change the conclusion, which is the only reason the
 > assumption was acceptable.
 
+The flutter working, the fin dimensions and the resulting plots are in the team
+documentation I helped write:
+[`fin-flutter-and-separation-testing-extract.pdf`](docs/fin-flutter-and-separation-testing-extract.pdf).
+That file is an extract. The packing-procedure pages are another sub-team's work and are
+left out, along with the operational pages that carry hardware credentials.
+
 ---
 
 ## Avionics integration
@@ -261,19 +267,42 @@ This is the measurement step the section above is about: the charge mass is set 
 scale, not estimated.*
 
 **What I did:** designed and ground-tested the separation charges, using an **Eggtimer
-Quantum** as the firing system and **e-match** ignition, iterating charge mass across
-**three separation tests** until the recovery system deployed reliably. I worked with the
-team leads to estimate the starting charge requirement, and debugged power and
-electronics faults that came up during testing.
+Quantum** as the firing system and **e-match** ignition, iterating charge mass until the
+recovery system deployed reliably. I worked with the team leads to estimate the starting
+charge requirement, and debugged power and electronics faults that came up during testing.
 
-> **Evidence note, read this before quoting numbers.** The three-test count, the Eggtimer
-> Quantum, the e-match ignition and the charge-mass iteration are from my own recollection
-> of the test campaign. The photograph above evidences **one** charge being massed at
-> 2.494 g, but this repository holds **no test log and no per-test results**, so I cannot
-> say from the repo alone whether 2.494 g was a starting point, an intermediate step, or
-> the value that flew. I have deliberately not invented numbers to fill that gap. If you
-> want the specifics, ask me and I will tell you what I remember and flag what I am unsure
-> of.
+### Finding the charge mass by bisection
+
+The charge mass was not guessed at and it was not swept linearly. The procedure documented
+for the team, and the one I ran, is a **binary search on charge mass**:
+
+1. Fire one test at **1 g** and one at **2 g** to bracket the answer immediately.
+2. If both are too weak, jump the bracket up to 3 g and 4 g.
+3. If 1 g is too weak and 2 g works or overshoots, the answer is inside 1 to 2 g, so test
+   **1.5 g** next.
+4. Keep halving the interval until the charge lands on a clean, forceful separation.
+5. Once a charge gives a consistent result, fire it **2 to 3 more times** to confirm it is
+   repeatable rather than lucky.
+
+The target is the *minimum* charge that separates cleanly every time: enough that it never
+merely pops open, not so much that it damages the airframe or the parachute. Bracketing
+and halving converges in **3 to 4 tests**, where a linear sweep would burn far more
+hardware and far more range time to reach the same answer.
+
+This is the part of the project I find easiest to explain to software people. It is a
+binary search, run against a physical system where every probe costs a rebuild, a drive to
+a test site and a finite supply of e-matches. The cost per iteration is what makes the
+choice of search strategy matter.
+
+> **Evidence note, read this before quoting numbers.** The hardware, the firing method and
+> the bisection procedure are documented in the
+> [extract above](docs/fin-flutter-and-separation-testing-extract.pdf). What is *not*
+> recorded anywhere is the per-test result table: this repository holds no test log, so I
+> cannot say from the record alone which charge mass finally flew. The photograph above
+> evidences one charge being massed at 2.494 g, which sits inside the 1 to 4 g range the
+> procedure works through, but whether it was an intermediate probe or the final answer is
+> my recollection rather than a record. I have deliberately not invented numbers to fill
+> that gap.
 
 ---
 

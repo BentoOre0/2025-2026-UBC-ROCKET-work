@@ -64,7 +64,9 @@ printed, laid up, or bolted in.
   (`LocalCirPattern1`) and the bottom plate.
 - **OpenRocket modelling** for stability and trajectory.
 - **3D printing.** The majority of the sub-team's printed prototypes and flight parts
-  went through me, including the PA6GF (glass-filled nylon) nose cone.
+  went through me, including the PA6GF (glass-filled nylon) nose cone, printed in the
+  glass-filled rather than the carbon-filled grade so the avionics could still get a
+  radio signal through it.
 - **Fiberglass wet layup** for the custom body tubes.
 - **Avionics bay integration.** Fitting the flight computer stack, battery and charge
   wiring into the bay.
@@ -119,7 +121,7 @@ behind the cone; the recovery hardware packs either side of the electronics.*
 <td width="50%"><img src="media/build/composite-tube-carbon-fins.jpg" alt="Composite body tube and carbon fibre fin"></td>
 </tr>
 <tr>
-<td colspan="2"><em>Left: the PA6GF nose cone I printed, next to the green fiberglass body tube. PA6GF (glass-filled nylon) was chosen over a standard print material because the cone sees the highest aerodynamic heating and stagnation pressure on the vehicle. Right: the composite airframe and a carbon fibre fin during fin fabrication: fiberglass and phenolic in the tube, carbon in the fins.</em></td>
+<td colspan="2"><em>Left: the PA6GF nose cone I printed, next to the green fiberglass body tube. PA6GF (glass-filled nylon) was chosen over PA6CF, the carbon-filled version of the same nylon, because glass fill is transparent to radio waves and carbon fill is not. The nose cone sits over the avionics, so anything the flight computer transmits or receives has to pass through that wall. PA6CF would have given similar mechanical performance and shielded the radios. Glass fill keeps the stiffness and temperature capability the cone needs, since it sees the highest aerodynamic heating and stagnation pressure on the vehicle, without blocking the signal. Right: the composite airframe and a carbon fibre fin during fin fabrication: fiberglass and phenolic in the tube, carbon in the fins.</em></td>
 </tr>
 </table>
 

@@ -77,6 +77,14 @@ The assembly is six parts:
 | U-bolt attachment, body tube end | `uboltattatchmentpart.SLDPRT` |
 | U-bolt attachment, nose cone end | `Uboltattatchmentpartnosecone.SLDPRT` |
 
+**Five fins was a cosmetic decision.** Three or four fins would have done the job on a
+vehicle this size; I went with five because I liked how it looked. The rule I held myself
+to was that the styling choice had to survive the stability check rather than drive it,
+and it did: extra fin area sits aft of the centre of gravity, so it pushes the centre of
+pressure back and the stability margin came out fine. The cost was a little extra drag
+and print time. This is from memory; there is no stability model for Star Raptor in this
+repository.
+
 ### Section views
 
 The section views are what I actually used while designing. On a printed rocket the
@@ -143,7 +151,7 @@ one. Surface finish was the thing I could afford to give up. Print time was not.
 <td width="50%"><img src="media/nosecone-ubolt-kevlar.jpg" alt="Nose cone with U-bolt and kevlar shock cord"></td>
 </tr>
 <tr>
-<td colspan="2"><em>Left: the printed fin can, viewed from the aft end down the motor tube. Printing the fin can as a single part fixes the fin alignment in the model instead of during assembly. Right: the nose cone's recovery attachment, a through-bolt anchoring the kevlar shock cord. This joint takes the full deployment shock, so it is bolted through the structure rather than glued.</em></td>
+<td colspan="2"><em>Left: the printed fin can, viewed from the aft end down the motor tube. Printing the fin can as a single part fixes the fin alignment in the model instead of during assembly, and it is what made a five-fin can (a look I chose, not a requirement) no harder to build than a three-fin one. Right: the nose cone's recovery attachment, a through-bolt anchoring the kevlar shock cord. This joint takes the full deployment shock, so it is bolted through the structure rather than glued.</em></td>
 </tr>
 </table>
 
@@ -157,8 +165,9 @@ this volume to push the nose cone and parachute out.*
 
 ## My role
 
-All of it. Design, CAD, printing, assembly, recovery packing, and the certification
-flight. No sub-teams, no inherited hardware.
+All of it. Design, CAD, printing, assembly, and recovery packing. No sub-teams, no
+inherited hardware. The certification launch window was scrubbed by weather, so the
+vehicle in these photos is built and flight-ready but has not flown.
 
 ---
 
@@ -193,7 +202,7 @@ to cut, and which one (recovery hardware) to spend real money on rather than imp
 was the part that actually required judgement.
 
 **This was the transition project.** Before this, most of my work was software and
-algorithmic. Star Raptor was the first thing I designed, manufactured and flew end to end
-myself. Getting a physical object through that whole loop, including the parts that are
-just tedious, is what made the hardware work that followed possible: the Big Mach, and
+algorithmic. Star Raptor was the first thing I took from a blank SolidWorks assembly to a
+finished physical vehicle on my own. Getting an object through that whole loop, including
+the parts that are just tedious, is what made the hardware work that followed possible: the Big Mach, and
 [the quadruped](https://github.com/BentoOre0/Modded-Nova-SM3).

@@ -23,7 +23,7 @@ A UBC Rocket test vehicle, built so the team could fly a new reefing parachute s
 <td><h3><a href="star-raptor/">Star Raptor</a></h3>
 My own certification rocket, designed and built solo to earn a Canadian Association of Rocketry certification.
 <br><br>
-<b>My role:</b> everything. Design, CAD, printing, assembly, recovery packing, flight.
+<b>My role:</b> everything. Design, CAD, printing, assembly, recovery packing. Built and flight-ready; the certification launch window was scrubbed by weather.
 <br><br>
 <b>Scale:</b> roughly 1 m, printed nose cone and five-fin can, motor-ejection recovery, no onboard electronics.
 <br><br>
@@ -48,7 +48,7 @@ Concretely, across the two projects:
 |---|---|
 | **CAD** | Owned and assembled the full `FullAssembly` SolidWorks model of the Big Mach: nose cone sections, body tubes, couplers, bulkheads, centering rings, fin pattern. Modelled Star Raptor from scratch as a six-part SolidWorks assembly, then exported and sliced it myself. |
 | **Simulation** | OpenRocket models for stability and trajectory, used to size the airframe and check margin before committing to a layup. |
-| **Manufacturing** | 3D printing (including a PA6GF glass-filled-nylon nose cone), fiberglass wet layups, composite fin work, paint and finishing. |
+| **Manufacturing** | 3D printing (including a PA6GF glass-filled-nylon nose cone, glass fill rather than carbon so the avionics' radio signal passes through it), fiberglass wet layups, composite fin work, paint and finishing. |
 | **Avionics integration** | Physically fitting the flight computer stack, battery and charge wiring into the bay, and keeping it serviceable by the sub-team that owned it. |
 | **Energetics and testing** | Sizing and massing black powder separation charges, wiring e-matches, and firing them over a remote link. |
 

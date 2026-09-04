@@ -82,8 +82,7 @@ vehicle this size; I went with five because I liked how it looked. The rule I he
 to was that the styling choice had to survive the stability check rather than drive it,
 and it did: extra fin area sits aft of the centre of gravity, so it pushes the centre of
 pressure back and the stability margin came out fine. The cost was a little extra drag
-and print time. This is from memory; there is no stability model for Star Raptor in this
-repository.
+and print time. 
 
 ### Section views
 
@@ -173,19 +172,6 @@ vehicle in these photos is built and flight-ready but has not flown.
 
 ## What I took away from it
 
-**Choosing an architecture that removes failure modes beats engineering around them.**
-Motor ejection is less impressive than a dual-deploy altimeter setup, and it was
-unambiguously the right call. Every electronic component I did not put in the rocket was a
-component I did not have to source, wire, mount, power, test, or debug at midnight on day
-four. The propellant grain already carried an ejection charge. Using it meant the recovery
-system had no failure mode I would have needed a test campaign to characterise, and a test
-campaign was exactly what I did not have time for.
-
-**Print the parts where alignment matters.** A one-piece fin can moves fin alignment out
-of assembly, where I could get it wrong with glue and a squint, and into the model, where
-it is a constraint I cannot violate. The same logic picked the nose cone. Those were the
-two geometrically fussy parts, and printing them meant I could iterate the shape without
-tooling and without a jig.
 
 **Model the whole thing before printing any of it.** The parts that had to mate (fin can
 to body tube, nose cone to its U-bolt ring) were the parts most likely to waste a print,
@@ -194,12 +180,7 @@ clearance that has closed up. A reprint of the fin can costs hours I did not hav
 re-export costs minutes. Building the assembly first was what kept the five days
 realistic.
 
-**Scope is the engineering.** There is nothing sophisticated in this vehicle. The
-sophistication was in deciding what not to build. Given five days, solo, at home, the
-design question was not "what is the best rocket I can draw" but "what is the best rocket
-I can finish", and those have very different answers. Working out which corners were safe
-to cut, and which one (recovery hardware) to spend real money on rather than improvise,
-was the part that actually required judgement.
+**print a jig next time.** If I need to drill holes in a circular pattern around a tube 3D print a jig to help with that.
 
 **This was the transition project.** Before this, most of my work was software and
 algorithmic. Star Raptor was the first thing I took from a blank SolidWorks assembly to a
